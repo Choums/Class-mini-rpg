@@ -10,9 +10,9 @@ class Perso
     public:
     Perso();
     Perso(std::string, int);
-    Perso(Perso const&); //cpy
+    Perso(Perso const&); //cosntru. cpy
     ~Perso();
-    Perso& operator=(Perso const&);
+    Perso& operator=(Perso const&); //cpy.
     void atk(Perso &target);
     void dmg(int);
     void heal();
