@@ -1,0 +1,2 @@
+#!/bin/bash
+g++ man.cpp Perso.cpp Wpn.cpp -o s.exe && ./s.exe
