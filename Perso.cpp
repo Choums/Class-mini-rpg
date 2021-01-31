@@ -14,7 +14,7 @@ Perso::Perso(string n_wpn, int wpn_dmg) : m_pv(100), m_wpn(NULL), m_pot(3)
 
 Perso::Perso(Perso const& cpy_perso) : m_pv(cpy_perso.m_pv), m_pot(cpy_perso.m_pot), m_wpn(NULL)
 {
-    m_wpn = new Wpn(*(cpy_perso.m_wpn));
+    m_wpn = new Wpn(*(cpy_perso.m_wpn)); //Le constru. de copie de Wpn reçoit un obj. hors m_wpn est un pointeur donc * avant pour envoyer l'abj.
 }
 
 Perso::~Perso()
@@ -24,7 +24,7 @@ Perso::~Perso()
 
 Perso& Perso::operator=(Perso const& cpy_perso)
 {
-    if(this != &cpy_perso)
+    if(this != &cpy_perso) //Vérifie que les 2 obj. soient diff.
     {
         m_pv = cpy_perso.m_pv;
         m_pot = cpy_perso.m_pot;
@@ -66,10 +66,7 @@ void Perso::heal()
 
 bool Perso::is_alive() const
 {
-    if(m_pv)
-        return(false);
-    else
-        return(true);
+    return(m_pv);
 }
 
 void Perso::change_wpn(string new_n_wpn, int new_wpn_dmg)
