@@ -1,0 +1,2 @@
+#!/bin/bash
+g++ man.cpp Perso.cpp Wpn.cpp Mage.cpp Warrior.cpp -o s.exe && ./s.exe
